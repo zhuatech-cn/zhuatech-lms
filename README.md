@@ -1,5 +1,13 @@
 # 企业学习管理系统 / ZhuaTech LMS
 
+## 2026-10-23 功能更新：学习路径先修条件核验
+
+验证课程先修图、已完成记录和循环依赖，计算可学习课程、锁定原因及剩余学习时长，不自动授予资格。
+
+登录真实后端后，点击右下角“业务计算工具”，可输入结构化数据、执行计算和导出完整结果。该功能已实现后端算法，并非静态示例响应。
+
+接口：`POST /api/workbench/learning-path-prerequisites`（沿用当前登录 JWT）。计算仅处理本次输入，不读取其他用户记录，不写入业务单据、不自动审批、不调用外部模型。算法口径、输入示例、边界和测试方法见[本次更新说明](docs/AI_WORKFLOW_UPGRADE_20261023.md)。
+
 [简体中文](README.md) | [English](README.en.md)
 
 > Learning Management System community source project by ZhuaTech
