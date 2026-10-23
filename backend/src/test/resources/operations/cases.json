@@ -1,0 +1,63 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "HOLD",
+      "validHours": "#35",
+      "hourGap": "#1"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "expiredHours": "4"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "expiredHours": "4",
+      "examScore": "79"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "expiredHours": "41"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "credentialUntil": "2026-10-23"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "credentialUntil": "2026-10-24",
+      "expiredHours": "4"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "examScore": "101"
+    },
+    "expected": {},
+    "error": true
+  }
+]

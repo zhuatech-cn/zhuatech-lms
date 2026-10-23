@@ -1,0 +1,90 @@
+{
+  "slug": "lms",
+  "title": "学时有效性与考试双门槛",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "completedHours",
+      "label": "已完成学时",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "expiredHours",
+      "label": "其中过期学时",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "requiredHours",
+      "label": "要求有效学时",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "examScore",
+      "label": "考试得分",
+      "type": "NUMBER",
+      "scale": 4,
+      "min": "0",
+      "max": "100"
+    },
+    {
+      "key": "passScore",
+      "label": "要求通过分",
+      "type": "NUMBER",
+      "scale": 4,
+      "min": "0",
+      "max": "100"
+    },
+    {
+      "key": "credentialUntil",
+      "label": "资格有效至",
+      "type": "DATE"
+    }
+  ],
+  "columns": [
+    {
+      "key": "validHours",
+      "label": "有效学时"
+    },
+    {
+      "key": "hourGap",
+      "label": "学时缺口"
+    },
+    {
+      "key": "credentialExpired",
+      "label": "资格已过期"
+    }
+  ],
+  "description": "从已完成学时扣除已过期学时，并核对考试成绩与资格有效期，不能仅凭课程浏览记录认定通过。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-24",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "completedHours": "40",
+        "expiredHours": "5",
+        "requiredHours": "36",
+        "examScore": "85",
+        "passScore": "80",
+        "credentialUntil": "2026-12-31"
+      }
+    ]
+  }
+}
